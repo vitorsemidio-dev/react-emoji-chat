@@ -2,6 +2,8 @@ import React from 'react';
 
 import './Message.css';
 
+import ReactEmoji from 'react-emoji';
+
 export default function Message({ message: { user, text }, name }) {
   let isSentByCurrentUser = false;
 
@@ -20,7 +22,7 @@ export default function Message({ message: { user, text }, name }) {
           </p>
           <div className="messageBox backgroundBlue">
             <p className="messageText colorWhite">
-              {text}
+              {ReactEmoji.emojify(text)}
             </p>
           </div>
         </div>
@@ -28,7 +30,7 @@ export default function Message({ message: { user, text }, name }) {
         <div className="messageContainer justifyStart">
           <div className="messageBox backgroundLight">
             <p className="messageText colorDark">
-              {text}
+              {ReactEmoji.emojify(text)}
             </p>
           </div>
           <p className="sentText">{user}</p>
